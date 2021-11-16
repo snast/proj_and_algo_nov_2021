@@ -1,5 +1,7 @@
 function containsDuplicateWithoutMap(arr) {
     //O(n^2)
+    // time complexity = O(n)
+    // space complexity = original array
     // for loop that goes through all elements
     var counter = 1;
     for(var index = 0; index<arr.length; index++) {
@@ -14,9 +16,13 @@ function containsDuplicateWithoutMap(arr) {
     }
     return false; // there no duplicates, true if there are duplicates
 }
+// how can we reduce from O(n^2) but not use so much space?
+// 1) Sort the array (merge sort O(log n))
+// 2) keep going down the array until a duplicate is found next to each other
 
 function containsDuplicateWithMap(arr) {
-    //O(n)
+    // time complexity = O(n)
+    // space complexity = original array, + map (arr.length elems inside)
     var counter = 1;
     var dataMap = new Set();
     for(var index =0; index<arr.length; index++) {
